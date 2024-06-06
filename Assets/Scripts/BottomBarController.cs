@@ -5,6 +5,7 @@ using DG.Tweening;
 using LeTai.TrueShadow;
 using Managers;
 using Models;
+using ModularMotion;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ using UnityEngine.UI;
 public class BottomBarController : MonoBehaviour
 {
     [SerializeField] private TMP_Text leftQueueText, rightQueueText, versionCodeText, workingModeText;
+    [SerializeField] private UIMotion leftQueueMotion, rightQueueMotion;
     
     [SerializeField] private TMP_Text recordStatusText;
     [SerializeField] private Image recordStatusLight;
@@ -44,6 +46,17 @@ public class BottomBarController : MonoBehaviour
         recordStatusText.text = "未录制";
         recordStatusLight.color = notRecordColor;
         recordStatusLight.GetComponent<TrueShadow>().Color = notRecordColor;
+
+        var setup = SettingsManager.Instance.Settings.MachineSetup;
+        if (setup.leftMachineId != -1)
+        {
+            leftQueueMotion.PlayAll();
+        }
+        if (setup.rightMachineId != -1)
+        {
+            rightQueueMotion.PlayAll();
+        }
+        
     }
     
     public void SetRecordStatus(RecordStatus status, float time = 0f)
