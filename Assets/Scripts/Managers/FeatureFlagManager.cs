@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace Managers
 {
-    public partial class FeatureFlagManager
+    public abstract class FeatureFlagManager
     {
         public static bool IsFeatureEnabled(string featureName)
         {
-            return bool.Parse(File.ReadAllText($"{Application.persistentDataPath}/{featureName}.txt"));
+            var path = $"{Application.persistentDataPath}/{featureName}.txt";
+            return File.Exists(path) && bool.Parse(File.ReadAllText(path));
         }
         
         public static bool IsScanForceRecordEnabled()

@@ -18,7 +18,6 @@ public class QueueListItem : MonoBehaviour
         Username_Text.text = item.nickname;
         QueueId_Text.text = item.queueId.ToString();
         BackgroundImage.sprite = await CachedImageManager.Instance.GetImage(item.cardUrl);
-        // TODO: LOAD IMAGE
     }
     
     public int QueueId => int.Parse(QueueId_Text.text);

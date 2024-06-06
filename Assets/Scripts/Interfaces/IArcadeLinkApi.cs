@@ -29,5 +29,8 @@ namespace Interfaces
         [Post("/video")]
         [Header("Secret")]
         Task<HttpApiResponse> PostVideo([Body] HttpRequestModels.VideoInsertRequest request, [Header("Secret")] string secret);
+        
+        [Get("/location/{locationId}")]
+        Task<HttpApiResponse> GetLocation([Path] int locationId);
     }
 }
