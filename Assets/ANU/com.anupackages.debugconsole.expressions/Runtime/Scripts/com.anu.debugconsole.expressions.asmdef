@@ -1,0 +1,17 @@
+{
+    "name": "com.anu.debugconsole.expressions",
+    "rootNamespace": "ANU.IngameDebug.Console.Expressions",
+    "references": [
+        "NCalc",
+        "com.anu.debugconsole"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

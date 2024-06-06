@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // 检出你的代码
+                git 'https://github.com/your-repo.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // 使用Unity命令行接口进行构建
+                sh '''
+                /Applications/Unity/Hub/Editor/YourUnityVersion/Unity.app/Contents/MacOS/Unity \
+                -quit \
+                -batchmode \
+                -nographics \
+                -silent-crashes \
+                -logFile \
+                -projectPath ${WORKSPACE} \
+                -buildWindowsPlayer "Build/YourAppName.exe" \
+                -buildTarget Win \
+                -executeMethod YourNamespace.YourClass.YourMethod
+                '''
+            }
+        }
+
+        stage('Archive') {
+            steps {
+                // 将构建的应用程序归档为artifacts
+                archiveArtifacts artifacts: 'Build/**', fingerprint: true
+            }
+        }
+    }
+}

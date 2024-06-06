@@ -1,0 +1,18 @@
+{
+    "name": "com.anu.debugconsole",
+    "rootNamespace": "ANU.IngameDebug.Console",
+    "references": [
+        "Unity.TextMeshPro",
+        "NDesk.Options",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

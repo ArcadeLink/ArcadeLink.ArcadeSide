@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Websocket.Client</id>
+    <version>4.4.43</version>
+    <authors>Mariusz Kotas</authors>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/Marfusios/websocket-client</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Marfusios/websocket-client/master/src/Websocket.Client/icon.png</iconUrl>
+    <description>Client for websocket API with built-in reconnection and error handling</description>
+    <releaseNotes>Release of version 4.0</releaseNotes>
+    <copyright>Copyright 2020 Mariusz Kotas. All rights reserved.</copyright>
+    <tags>websockets websocket client</tags>
+    <repository type="Git" url="https://github.com/Marfusios/websocket-client" />
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="System.Reactive" version="4.3.2" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Channels" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="System.Reactive" version="4.3.2" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Channels" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Reactive" version="4.3.2" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Channels" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="System.Reactive" version="4.3.2" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Channels" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

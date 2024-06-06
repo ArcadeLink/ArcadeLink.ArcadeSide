@@ -1,0 +1,16 @@
+{
+    "name": "NCalc",
+    "rootNamespace": "NCalc",
+    "references": [
+        "Antlr4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

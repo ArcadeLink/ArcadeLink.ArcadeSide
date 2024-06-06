@@ -1,0 +1,24 @@
+{
+  "name": "com.anupackages.antlr4",
+  "version": "4.13.0",
+  "displayName": "ANU Tool for Language Recognition",
+  "description": "Redistribution of a powerful parser generator for reading, processing, executing, or translating structured text or binary files.",
+  "keywords": [
+    "unity3d",
+    "ANTLR"
+  ],
+  "dependencies": {},
+  "author": {
+    "name": "ANU CHEEKI BREEKI",
+    "url": "https://github.com/ANU-CHEEKI-BREEKI"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.antlr4.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.antlr4/issues"
+  },
+  "homepage": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.antlr4#readme"
+}

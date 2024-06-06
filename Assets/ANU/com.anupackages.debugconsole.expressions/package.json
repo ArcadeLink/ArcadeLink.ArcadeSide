@@ -1,0 +1,34 @@
+{
+  "name": "com.anupackages.debugconsole.expressions",
+  "version": "1.0.0",
+  "displayName": "ANU Ingame debug console Expressions Evaluation",
+  "description": "Enable Expression evaluation for com.anupackages.debugconsole command line",
+  "unity": "2021.3",
+  "keywords": [
+    "unity3d",
+    "upm",
+    "console",
+    "debug",
+    "expression",
+    "evaluation"
+  ],
+  "dependencies": {
+    "com.anupackages.debugconsole": "2.1.3",
+    "com.anupackages.ncalc": "3.6.0"
+  },
+  "author": {
+    "name": "ANU CHEEKI BREEKI",
+    "url": "https://github.com/ANU-CHEEKI-BREEKI"
+  },
+  "documentationUrl": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.debugconsole.expressions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.debugconsole.expressions.git"
+  },
+  "license": "MIT",
+  "licensesUrl": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.debugconsole.expressions/blob/main/LICENCE.md",
+  "bugs": {
+    "url": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.debugconsole.expressions/issues"
+  },
+  "homepage": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.debugconsole.expressions#readme"
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>Qiniu.Shared</id>
+        <version>7.2.15</version>
+        <authors>QINIU</authors>
+        <projectUrl>https://github.com/qiniu/csharp-sdk</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Qiniu (Cloud) C# SDK</description>
+        <releaseNotes />
+        <dependencies>
+            <group targetFramework=".NETFramework2.0">
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
+            </group>
+            <group targetFramework=".NETFramework3.5">
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
+            </group>
+            <group targetFramework=".NETFramework4.0">
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
+            </group>
+            <group targetFramework=".NETFramework4.5">
+                <dependency id="Newtonsoft.Json" version="9.0.1" />
+            </group>
+        </dependencies>
+    </metadata>
+</package>

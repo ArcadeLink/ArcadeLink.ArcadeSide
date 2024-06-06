@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ModularMotion</name>
+    </assembly>
+    <members>
+        <member name="F:ModularMotion.UIMotion.OnBegin">
+             <summary>
+             Triggers UnityEvent on the beginning of the animation
+             </summary>
+            </member>
+        <member name="F:ModularMotion.UIMotion.OnEnd">
+             <summary>
+             Triggers UnityEvent at the ending of the animation
+             </summary>
+            </member>
+        <member name="F:ModularMotion.UIMotion.Keyframes">
+             <summary>
+             A list of keyframes in this component
+             </summary>
+            </member>
+        <member name="F:ModularMotion.UIMotion.Frame">
+             <summary>
+             Get current frame in this component
+             </summary>
+            </member>
+        <member name="M:ModularMotion.UIMotion.Play">
+             <summary>
+             Play animations between two frames. (Trigger Ex. Open,Close)
+             </summary>
+            </member>
+        <member name="M:ModularMotion.UIMotion.PlayFromStartTillEnd">
+             <summary>
+             Play animations from the start regardless what frame is currently on.
+             </summary>
+            </member>
+        <member name="M:ModularMotion.UIMotion.PlayAll">
+             <summary>
+             Play animations from the start to the end. (if Ping-Pong wrap mode selected, it will go back and forth)
+             </summary>
+            </member>
+        <member name="M:ModularMotion.UIMotion.PlayNext">
+             <summary>
+             Play next animation.
+             </summary>
+            </member>
+        <member name="M:ModularMotion.UIMotion.PlayPrevious">
+             <summary>
+             Play previous animation.
+             </summary>
+            </member>
+        <member name="M:ModularMotion.UIMotion.PlayAllForward">
+             <summary>
+             Play next animation to the end of frame. (Recommend to use with Ping-Pong wrap mode)
+             </summary>
+            </member>
+        <member name="M:ModularMotion.UIMotion.PlayAllBackward">
+             <summary>
+             Play previous animation to the end of frame. (Recommend to use with Ping-Pong wrap mode)
+             </summary>
+            </member>
+    </members>
+</doc>

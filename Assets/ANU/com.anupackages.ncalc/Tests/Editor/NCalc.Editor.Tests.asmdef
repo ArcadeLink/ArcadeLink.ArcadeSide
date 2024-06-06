@@ -1,0 +1,19 @@
+{
+    "name": "NCalc.Editor.Tests",
+    "rootNamespace": "NCalc.Editor.Tests",
+    "references": [
+        "NCalc",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

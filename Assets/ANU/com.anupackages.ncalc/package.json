@@ -1,0 +1,28 @@
+{
+  "name": "com.anupackages.ncalc",
+  "version": "3.6.0",
+  "displayName": "ANU Runtime expression evaluator",
+  "description": "Provides easy way to evaluate expressions from sting input as runtime",
+  "keywords": [
+    "unity3d",
+    "upm",
+    "expression",
+    "evaluation"
+  ],
+  "dependencies": {
+    "com.anupackages.antlr4": "4.13.0"
+  },
+  "author": {
+    "name": "ANU CHEEKI BREEKI",
+    "url": "https://github.com/ANU-CHEEKI-BREEKI"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.ncalc.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.ncalc/issues"
+  },
+  "homepage": "https://github.com/ANU-CHEEKI-BREEKI/com.anupackages.ncalc#readme"
+}
