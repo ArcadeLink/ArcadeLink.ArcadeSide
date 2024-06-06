@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Managers;
@@ -25,6 +26,87 @@ public class JoinUIController : MonoBehaviour
     private CanvasGroup leftLoadingAnimation, rightLoadingAnimation;
     [SerializeField]
     private CanvasGroup leftFinishedAnimation, rightFinishedAnimation;
+
+    public void OnTouchScreenButtonPressed(int isRight)
+    {
+        _ = JoinTouchscreen(isRight == 1);
+    }
+
+    public async Task JoinTouchscreen(bool isRight)
+    {
+        timeoutProgressBar.PauseTimer();
+        isSelected = true;
+        
+        if (isRight)
+        {
+            rightJoinMotion.PlayNext();
+            rightJoinText.text = "加入中";
+            rightLoadingAnimation.DOFade(1, 0.5f);
+        }
+        else
+        {
+            leftJoinMotion.PlayNext();
+            leftJoinText.text = "加入中";
+            leftLoadingAnimation.DOFade(1, 0.5f);
+        }
+        
+        try
+        {
+            await QueueManager.Instance.InsertQueueItem(isRight, ScanManager.Instance.currentIntent.UserId).ContinueWith(async task =>
+            {
+                if (task.IsFaulted)
+                {
+                    Debug.Log(task.Exception);
+                    await ModalController.Instance.ShowModal("错误", $"加入队列失败, 请检查是否已经在队列中\n{task.Exception!.Message}");
+                    StateManager.Instance.SetState(States.Main_Window);
+                    if (isRight)
+                    {
+                        rightJoinMotion.PlayAllBackward();
+                        rightLoadingAnimation.DOFade(0, 0.5f);
+                    }
+                    else
+                    {
+                        leftJoinMotion.PlayAllBackward();
+                        leftLoadingAnimation.DOFade(0, 0.5f);
+                    }
+                }
+                else
+                {
+                    await QueueManager.Instance.UpdateQueueItems();
+                    if (isRight)
+                    {
+                        rightJoinMotion.PlayNext();
+                        rightJoinText.text = "已加入";
+                        rightLoadingAnimation.DOFade(0, 0.5f);
+                        rightFinishedAnimation.DOFade(1, 0.5f);
+                    }
+                    else
+                    {
+                        leftJoinMotion.PlayNext();
+                        leftJoinText.text = "已加入";
+                        leftLoadingAnimation.DOFade(0, 0.5f);
+                        leftFinishedAnimation.DOFade(1, 0.5f);
+                    }
+                }
+            });
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+            await ModalController.Instance.ShowModal("错误", $"加入队列失败, 请检查是否已经在队列中\n{e.Message}");
+            StateManager.Instance.SetState(States.Main_Window);
+            if (isRight)
+            {
+                rightJoinMotion.PlayAllBackward();
+                rightLoadingAnimation.DOFade(0, 0.5f);
+            }
+            else
+            {
+                leftJoinMotion.PlayAllBackward();
+                leftLoadingAnimation.DOFade(0, 0.5f);
+            }
+        }
+    }
     
     private async void Update()
     {

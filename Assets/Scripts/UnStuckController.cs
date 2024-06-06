@@ -13,12 +13,17 @@ public class UnStuckController : MonoBehaviour
             if (_escapeTimer > 2f)
             {
                 // 强制重置场景
-                SceneManager.LoadScene("Scaffold Scene");
+                ResetScene();
             }
         }
         else
         {
             _escapeTimer = 0f;
         }
+    }
+    
+    public void ResetScene()
+    {
+        SceneManager.LoadScene("Scaffold Scene");
     }
 }
