@@ -1,18 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DG.Tweening;
+using Interfaces;
 using LeTai.TrueShadow;
 using Managers;
 using Models;
 using ModularMotion;
+using Newtonsoft.Json;
+using RestEase;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BottomBarController : MonoBehaviour
 {
-    [SerializeField] private TMP_Text leftQueueText, rightQueueText, versionCodeText, workingModeText;
+    [SerializeField] private TMP_Text leftQueueText, rightQueueText, versionCodeText, workingModeText, locationNameText;
     [SerializeField] private UIMotion leftQueueMotion, rightQueueMotion;
     
     [SerializeField] private TMP_Text recordStatusText;
@@ -35,18 +39,11 @@ public class BottomBarController : MonoBehaviour
         StateManager.Instance.SetState(States.Setting_Window);
     }
     
-    private void Start()
+    private async void Start()
     {
         leftQueueText.text = "左机 0 人";
         rightQueueText.text = "右机 0 人";
         
-        versionCodeText.text = "0.0.1";
-        workingModeText.text = "正常模式";
-        
-        recordStatusText.text = "未录制";
-        recordStatusLight.color = notRecordColor;
-        recordStatusLight.GetComponent<TrueShadow>().Color = notRecordColor;
-
         var setup = SettingsManager.Instance.Settings.MachineSetup;
         if (setup.leftMachineId != -1)
         {
@@ -57,6 +54,22 @@ public class BottomBarController : MonoBehaviour
             rightQueueMotion.PlayAll();
         }
         
+        versionCodeText.text = Application.version;
+        workingModeText.text = "正常模式";
+        
+        // Get location name
+        var apiEndpoint = SettingsManager.Instance.Settings.ApiEndpoint;
+        var api = new RestClient(apiEndpoint).For<IArcadeLinkApi>();
+        var location = await api.GetLocation(SettingsManager.Instance.Settings.LocationId);
+        var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(
+            JsonConvert.SerializeObject(location.data)
+        );
+        if (data != null) locationNameText.text = data["name"].ToString();
+        else locationNameText.text = "未知机厅";
+
+        recordStatusText.text = "未录制";
+        recordStatusLight.color = notRecordColor;
+        recordStatusLight.GetComponent<TrueShadow>().Color = notRecordColor;
     }
     
     public void SetRecordStatus(RecordStatus status, float time = 0f)

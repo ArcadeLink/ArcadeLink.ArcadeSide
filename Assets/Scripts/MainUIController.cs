@@ -58,6 +58,11 @@ public class MainUIController : MonoBehaviour
         
         QueueManager.Instance.OnQueueItemsUpdated.AddListener(UpdateUI);
     }
+
+    public void OnTouchScreenButtonPressed()
+    {
+        StateManager.Instance.SetState(States.Scan_Window);
+    }
     
     private int UpdateUIEventCount = 0;
     private bool isUpdatingUI = false;
