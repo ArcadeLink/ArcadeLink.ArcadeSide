@@ -44,22 +44,6 @@ public class BottomBarController : MonoBehaviour
         leftQueueText.text = "左机 0 人";
         rightQueueText.text = "右机 0 人";
         
-        var apiEndpoint = SettingsManager.Instance.Settings.ApiEndpoint;
-        var api = new RestClient(apiEndpoint).For<IArcadeLinkApi>();
-        var location = await api.GetLocation(SettingsManager.Instance.Settings.LocationId);
-        var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(
-            JsonConvert.SerializeObject(location.data)
-        );
-        
-        versionCodeText.text = Application.version;
-        workingModeText.text = "正常模式";
-        if (data != null) locationNameText.text = data["name"].ToString();
-        else locationNameText.text = "未知机厅";
-
-        recordStatusText.text = "未录制";
-        recordStatusLight.color = notRecordColor;
-        recordStatusLight.GetComponent<TrueShadow>().Color = notRecordColor;
-
         var setup = SettingsManager.Instance.Settings.MachineSetup;
         if (setup.leftMachineId != -1)
         {
@@ -70,6 +54,22 @@ public class BottomBarController : MonoBehaviour
             rightQueueMotion.PlayAll();
         }
         
+        versionCodeText.text = Application.version;
+        workingModeText.text = "正常模式";
+        
+        // Get location name
+        var apiEndpoint = SettingsManager.Instance.Settings.ApiEndpoint;
+        var api = new RestClient(apiEndpoint).For<IArcadeLinkApi>();
+        var location = await api.GetLocation(SettingsManager.Instance.Settings.LocationId);
+        var data = JsonConvert.DeserializeObject<Dictionary<string, object>>(
+            JsonConvert.SerializeObject(location.data)
+        );
+        if (data != null) locationNameText.text = data["name"].ToString();
+        else locationNameText.text = "未知机厅";
+
+        recordStatusText.text = "未录制";
+        recordStatusLight.color = notRecordColor;
+        recordStatusLight.GetComponent<TrueShadow>().Color = notRecordColor;
     }
     
     public void SetRecordStatus(RecordStatus status, float time = 0f)

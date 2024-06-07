@@ -21,8 +21,8 @@ public class UnStuckController : MonoBehaviour
             _escapeTimer = 0f;
         }
     }
-    
-    public void ResetScene()
+
+    private void ResetScene()
     {
         SceneManager.LoadScene("Scaffold Scene");
     }
