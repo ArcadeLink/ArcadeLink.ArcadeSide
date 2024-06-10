@@ -150,10 +150,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 696025921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 542.1, y: -121}
-  m_SizeDelta: {x: 835.7937, y: 128.61981}
+  m_AnchorMin: {x: 0.065000005, y: 0.8308149}
+  m_AnchorMax: {x: 0.5, y: 0.9482223}
+  m_AnchoredPosition: {x: -0.4000244, y: -1.5}
+  m_SizeDelta: {x: 0.7937012, y: 1.619812}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125116644
 MonoBehaviour:
@@ -385,10 +385,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 696025921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 542.1, y: -352}
-  m_SizeDelta: {x: 835.7937, y: 128.61981}
+  m_AnchorMin: {x: 0.065000005, y: 0.11314815}
+  m_AnchorMax: {x: 0.5, y: 0.23500001}
+  m_AnchoredPosition: {x: 0.099975586, y: 0}
+  m_SizeDelta: {x: -0.20629883, y: -3.380188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &292615204
 GameObject:
@@ -469,10 +469,10 @@ RectTransform:
   - {fileID: 1114406904}
   m_Father: {fileID: 696025921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 471.58997, y: -23.059021}
-  m_SizeDelta: {x: 694.7749, y: 455.49756}
+  m_AnchorMin: {x: 0.065000005, y: 0.2638148}
+  m_AnchorMax: {x: 0.42758325, y: 0.69140744}
+  m_AnchoredPosition: {x: -0.4100952, y: 0.940979}
+  m_SizeDelta: {x: -1.2250977, y: -6.5024414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371567101
 MonoBehaviour:
@@ -691,6 +691,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475314442}
   m_CullTransparentMesh: 1
+--- !u!21 &641049690
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Default UI Material
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &696025917
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +854,46 @@ MonoBehaviour:
   cameraPreviewRawImage: {fileID: 1114406905}
   qrErrorText: {fileID: 196125670}
   loadingMotion: {fileID: 1725164634}
+--- !u!21 &806742910
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Default UI Material
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &886291732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1022,46 +1102,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114406903}
   m_CullTransparentMesh: 1
---- !u!21 &1700862800
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Default UI Material
-  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!21 &1702631379
 Material:
   serializedVersion: 8
@@ -1462,7 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1973814110}
+  m_Material: {fileID: 641049690}
   m_Color: {r: 0, g: 0, b: 0, a: 0.9137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1533,10 +1573,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 696025921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 542.1, y: -271}
-  m_SizeDelta: {x: 835.7937, y: 128.61981}
+  m_AnchorMin: {x: 0.065000005, y: 0.69140744}
+  m_AnchorMax: {x: 0.5, y: 0.81137043}
+  m_AnchoredPosition: {x: -0.9000244, y: -2}
+  m_SizeDelta: {x: -0.20629883, y: -1.380188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802282911
 MonoBehaviour:
@@ -1637,46 +1677,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802282909}
   m_CullTransparentMesh: 1
---- !u!21 &1973814110
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Default UI Material
-  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!21 &2058728302
 Material:
   serializedVersion: 8
@@ -1792,11 +1792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1548137138814743202, guid: b4dd573ec71ef41e2ac41c826727738a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0018920898
+      value: -0.0018310547
       objectReference: {fileID: 0}
     - target: {fileID: 1548137138814743202, guid: b4dd573ec71ef41e2ac41c826727738a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6.5045776
+      value: -6.5046387
       objectReference: {fileID: 0}
     - target: {fileID: 1548137138814743202, guid: b4dd573ec71ef41e2ac41c826727738a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
