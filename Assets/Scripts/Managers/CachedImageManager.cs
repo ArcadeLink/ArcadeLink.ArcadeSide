@@ -24,7 +24,7 @@ namespace Managers
                 return defaultSprite;
             }
             
-            url = SettingsManager.Instance.Settings.FileUrl + "/" + url;
+            url = url;
             
             // 用 md5 hash 检查图片是否已缓存
             var hash = url.Md5Hash();
