@@ -48,6 +48,7 @@ namespace Managers
                     SettingsManager.Instance.Settings.MachineSetup.leftMachineId);
                 var rawDataLeft = JsonConvert.SerializeObject(resultLeft.data);
                 var queueItemsLeft = JsonConvert.DeserializeObject<List<QueueItem>>(rawDataLeft);
+                queueItemsLeft.Sort((a, b) => a.queueId.CompareTo(b.queueId));
                 newQueueItems.AddRange(queueItemsLeft);
             }
 
@@ -58,6 +59,7 @@ namespace Managers
                     SettingsManager.Instance.Settings.MachineSetup.rightMachineId);
                 var rawDataRight = JsonConvert.SerializeObject(resultRight.data);
                 var queueItemsRight = JsonConvert.DeserializeObject<List<QueueItem>>(rawDataRight);
+                queueItemsRight.Sort((a, b) => a.queueId.CompareTo(b.queueId));
                 newQueueItems.AddRange(queueItemsRight);
             }
             
