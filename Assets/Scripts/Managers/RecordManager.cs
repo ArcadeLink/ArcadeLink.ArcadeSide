@@ -4,6 +4,8 @@ using System.IO;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using FFMpegCore;
+using FFMpegCore.Enums;
 using Models;
 using OBSWebsocketDotNet;
 using UnityEngine;
@@ -37,8 +39,24 @@ namespace Managers
                 Client.ConnectAsync("ws://127.0.01:4455", "");
             }
         }
-        
-        
+
+        private async Task ConvertVideo(string videoPath, string outputPath)
+        {
+            GlobalFFOptions.Configure(new FFOptions()
+            {
+                BinaryFolder = SettingsManager.Instance.Settings.FFmpegPath
+            });
+            
+            var ffmpegArguments = FFMpegArguments.FromFileInput(videoPath, true)
+                .OutputToFile(outputPath, true, options => options
+                    .WithVideoCodec(VideoCodec.LibX264)
+                    .WithFastStart()
+                );
+            
+            await ffmpegArguments.ProcessAsynchronously();
+            
+            Debug.Log("Video converted.");
+        }
         
         
         public async void StartRecord()
@@ -81,6 +99,9 @@ namespace Managers
                 isRecording = false;
                 BottomBarController.Instance.SetRecordStatus(RecordStatus.Pending);
                 await ResetObs();
+                await ConvertVideo(
+                    $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}/UploadingVideos/{ScanManager.Instance.currentRecordIntent.UserId}.mkv",
+                    $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}/UploadingVideos/{ScanManager.Instance.currentRecordIntent.UserId}.mp4");
                 await UploadFile();
                 BottomBarController.Instance.SetRecordStatus(RecordStatus.Stopped);
                 Debug.Log("Recording stopped.");
@@ -129,7 +150,7 @@ namespace Managers
             Debug.Log("Start Uploading...");
             // 上传文件
             await UploadService.Upload(
-                $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}/UploadingVideos/{ScanManager.Instance.currentRecordIntent.UserId}.mkv",
+                $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}/UploadingVideos/{ScanManager.Instance.currentRecordIntent.UserId}.mp4",
                 ScanManager.Instance.currentRecordIntent.UserId);
             
             // 重置状态

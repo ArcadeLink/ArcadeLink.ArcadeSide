@@ -68,7 +68,7 @@ public class UploadService
 
         // 重命名加入后缀
         var bucketManager = new BucketManager(mac);
-        var renameOp = await bucketManager.RenameAsync(BucketName, $"{name}", $"{name}.mkv");
+        var renameOp = await bucketManager.RenameAsync(BucketName, $"{name}", $"{name}.mp4");
 
         Debug.Log("Upload Finished.. Adding to database");
 
@@ -79,7 +79,7 @@ public class UploadService
         {
             userId = userId,
             locationId = Qth,
-            url = Base64.UrlSafeBase64Encode($"{FileUrl}/{name}.mkv"),
+            url = Base64.UrlSafeBase64Encode($"{FileUrl}{name}.mp4"),
             expiryTime = DateTime.Now.AddHours(1)
         }, secret);
         Debug.Log(JsonConvert.SerializeObject(insertResult));

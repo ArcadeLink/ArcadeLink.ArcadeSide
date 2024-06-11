@@ -16,5 +16,7 @@ namespace Models
         public string BucketName { get; set; }
         public float RecordInterval { get; set; }
         public bool MaintainceMode { get; set; }
+        public string FFmpegPath { get; set; }
+        public string FFmpegTempPath { get; set; }
     }
 }

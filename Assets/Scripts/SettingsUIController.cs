@@ -9,7 +9,8 @@ public class SettingsUIController : MonoBehaviour
 {
     [SerializeField]
     private TMP_InputField locationIdInputField, locationKeyInputField, apiEndpointInputField,
-        qiniuAccessKeyInputField, qiniuSecretKeyInputField, qiniuBucketInputField, qiniuDomainInputField, recordIntervalInputField;
+        qiniuAccessKeyInputField, qiniuSecretKeyInputField, qiniuBucketInputField, qiniuDomainInputField, recordIntervalInputField,
+            ffmpegBinaryPathInputField, ffmpegTempPathInputField;
     [SerializeField]
     private TMP_Dropdown cameraDropdown;
     [SerializeField]
@@ -30,6 +31,8 @@ public class SettingsUIController : MonoBehaviour
         settings.FileUrl = qiniuDomainInputField.text;
         settings.MaintainceMode = maintanceModeToggle.isOn;
         settings.RecordInterval = float.Parse(recordIntervalInputField.text);
+        settings.FFmpegPath = ffmpegBinaryPathInputField.text;
+        settings.FFmpegTempPath = ffmpegTempPathInputField.text;
         
         SettingsManager.Instance.Settings = settings;
 
@@ -49,6 +52,8 @@ public class SettingsUIController : MonoBehaviour
         apiEndpointInputField.text = settings.ApiEndpoint;
         maintanceModeToggle.isOn = settings.MaintainceMode;
         recordIntervalInputField.text = settings.RecordInterval.ToString(CultureInfo.InvariantCulture);
+        ffmpegBinaryPathInputField.text = settings.FFmpegPath;
+        ffmpegTempPathInputField.text = settings.FFmpegTempPath;
         
         var devices = WebCamTexture.devices;
         foreach (var device in devices)
