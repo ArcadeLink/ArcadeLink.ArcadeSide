@@ -123,6 +123,7 @@ public class ScanUIController : MonoBehaviour
         loadingMotion.PlayAllForward();
         
         Debug.Log($"Intent: {intent}, UID: {uid}, Code: {code} at {DateTime.UtcNow}");
+        ModalController.Instance.Intterupt();
         
         if (!await VerifyIntent(uid, code))
         {

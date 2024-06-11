@@ -22,6 +22,12 @@ public class ModalController : MonoBehaviour
         Instance = this;
     }
     
+    public void Intterupt()
+    {
+        GetComponent<CanvasGroup>().DOFade(0, 0.5f);
+        isShowing = false;
+    }
+    
     public async UniTask ShowModal(string title, string content, float time = 5f)
     {
         if (isShowing)
