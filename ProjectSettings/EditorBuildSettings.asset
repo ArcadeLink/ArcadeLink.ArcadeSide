@@ -20,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Join Window.unity
     guid: 434156490c6974763b3832b59893a106
-  - enabled: 0
-    path: Assets/Scenes/Maintence.unity
-    guid: b6cbef496b220f5fcb3f72fedbd8c67a
   - enabled: 1
     path: Assets/Scenes/Static Window.unity
     guid: be621c690b5f846eab616d594123eee3
@@ -30,3 +27,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Setting Window.unity
     guid: bab37bcfa7cfb4bca9842f9c1a288c81
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using FFMpegCore;
-using FFMpegCore.Enums;
+using FFmpeg.NET;
+using FFmpeg.NET.Enums;
 using Models;
 using OBSWebsocketDotNet;
 using UnityEngine;
@@ -42,18 +43,25 @@ namespace Managers
 
         private async Task ConvertVideo(string videoPath, string outputPath)
         {
-            GlobalFFOptions.Configure(new FFOptions()
+            var engine = new Engine(SettingsManager.Instance.Settings.FFmpegPath);
+            
+            // var ffmpegArguments = FFMpegArguments.FromFileInput(videoPath, true)
+            //     .OutputToFile(outputPath, true, options => options
+            //         .WithVideoCodec(VideoCodec.LibX264)
+            //         .WithFastStart()
+            //     );
+            //
+            var input = new InputFile(videoPath);
+            var output = new OutputFile(outputPath);
+            
+            var conversionOptions = new ConversionOptions
             {
-                BinaryFolder = SettingsManager.Instance.Settings.FFmpegPath
-            });
-            
-            var ffmpegArguments = FFMpegArguments.FromFileInput(videoPath, true)
-                .OutputToFile(outputPath, true, options => options
-                    .WithVideoCodec(VideoCodec.LibX264)
-                    .WithFastStart()
-                );
-            
-            await ffmpegArguments.ProcessAsynchronously();
+                VideoAspectRatio = VideoAspectRatio.R16_9,
+                VideoSize = VideoSize.Hd1080,
+                AudioSampleRate = AudioSampleRate.Hz44100
+            };
+
+            await engine.ConvertAsync(input, output, conversionOptions, new CancellationToken());
             
             Debug.Log("Video converted.");
         }

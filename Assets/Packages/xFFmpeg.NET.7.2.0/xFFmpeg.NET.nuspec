@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>xFFmpeg.NET</id>
+    <version>7.2.0</version>
+    <authors>Tobias Haimerl (cmxl)</authors>
+    <license type="file">LICENSE.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/cmxl/FFmpeg.NET</projectUrl>
+    <description>.NET wrapper for common ffmpeg tasks.</description>
+    <copyright>© 2022</copyright>
+    <tags>ffmpeg, dotnet, netstandard2.1</tags>
+    <repository type="git" url="https://github.com/cmxl/FFmpeg.NET" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+  </metadata>
+</package>
