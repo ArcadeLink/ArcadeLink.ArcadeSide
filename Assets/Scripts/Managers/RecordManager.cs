@@ -1,16 +1,13 @@
 using System;
-using System.Collections;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using FFmpeg.NET;
 using FFmpeg.NET.Enums;
 using Models;
 using OBSWebsocketDotNet;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Managers
 {
@@ -45,12 +42,6 @@ namespace Managers
         {
             var engine = new Engine(SettingsManager.Instance.Settings.FFmpegPath);
             
-            // var ffmpegArguments = FFMpegArguments.FromFileInput(videoPath, true)
-            //     .OutputToFile(outputPath, true, options => options
-            //         .WithVideoCodec(VideoCodec.LibX264)
-            //         .WithFastStart()
-            //     );
-            //
             var input = new InputFile(videoPath);
             var output = new OutputFile(outputPath);
             
@@ -58,7 +49,8 @@ namespace Managers
             {
                 VideoAspectRatio = VideoAspectRatio.R16_9,
                 VideoSize = VideoSize.Hd1080,
-                AudioSampleRate = AudioSampleRate.Hz44100
+                AudioSampleRate = AudioSampleRate.Hz44100,
+                HWAccel = HWAccel.cuda
             };
 
             await engine.ConvertAsync(input, output, conversionOptions, new CancellationToken());
@@ -215,6 +207,11 @@ namespace Managers
             if (recordTimer <= 0)
             {
                 await StopRecord();
+            }
+
+            if (Input.GetButtonDown("Stop"))
+            {
+                recordTimer = 0;
             }
         }
     }
