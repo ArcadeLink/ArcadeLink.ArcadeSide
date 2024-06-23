@@ -43,10 +43,9 @@ public class SettingsUIController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Cancel"))
+        if (Input.GetKeyDown(KeyCode.F2))
         {
             StateManager.Instance.SetState(States.Main_Window);
-
         }
     }
 }

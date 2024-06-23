@@ -1,45 +1,42 @@
-using Managers;
+using ANU.IngameDebug.Console;
 using UnityEngine;
-using SceneManager = UnityEngine.SceneManagement.SceneManager;
 
-public class TouchScreenHelperManager : MonoBehaviour
+namespace Managers
 {
-    public static TouchScreenHelperManager Instance { get; private set; }
-
-    private void Awake()
+    public class TouchScreenHelperManager : MonoBehaviour
     {
-        if (Instance == null)
+        public static TouchScreenHelperManager Instance { get; private set; }
+
+        private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            
+            DontDestroyOnLoad(gameObject);
         }
-    }
 
-    public bool IsTouchScreen()
-    {
-        return Input.touchSupported;
-    }
-    
-    public void ResetScene()
-    {
-        SceneManager.LoadScene("Scaffold Scene");
-    }
-
-    private int _clickCount = 0;
-    public void TriggerClick()
-    {
-        // 点击10次触发设置模式
-        if (_clickCount != 10)
+        private int _clickCount;
+        public void TriggerClick()
         {
             _clickCount++;
-            return;
+            
+            if (StateManager.Instance.CurrentState == States.Main_Window && _clickCount >= 8)
+            {
+                // 触发设置模式
+                StateManager.Instance.SetState(StateManager.Instance.CurrentState == States.Setting_Window
+                    ? States.Main_Window
+                    : States.Setting_Window);
+                _clickCount = 0;
+            }
+            else if (StateManager.Instance.CurrentState != States.Main_Window && _clickCount >= 4)
+            {
+                Destroy(GameObject.Find("DebugConsole"));
+                Destroy(GameObject.Find("Main Camera"));
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Setup Scene");
+                _clickCount = 0;
+            }
         }
-        
-        // 重置点击次数
-        _clickCount = 0;
-        
-        // 触发设置模式
-        StateManager.Instance.SetState(StateManager.Instance.CurrentState == States.Setting_Window
-            ? States.Main_Window
-            : States.Setting_Window);
     }
 }

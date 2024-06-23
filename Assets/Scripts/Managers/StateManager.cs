@@ -109,11 +109,6 @@ namespace Managers
             {
                 SetState(States.Scan_Window);
             }
-            
-            if (Input.GetButtonDown("Submit"))
-            {
-                SetState(States.Setting_Window);
-            }
         }
     }
 

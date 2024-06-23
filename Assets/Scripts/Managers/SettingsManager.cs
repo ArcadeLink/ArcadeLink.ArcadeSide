@@ -140,5 +140,11 @@ namespace Managers
             }
             Settings = settings;
         }
+
+        [DebugCommand("input")]
+        public void OpenInputSettings()
+        {
+            StateManager.Instance.SetState(States.Setting_Window);
+        }
     }
 }
