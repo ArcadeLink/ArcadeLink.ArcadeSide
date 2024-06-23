@@ -24,6 +24,8 @@ public class UnStuckController : MonoBehaviour
 
     private void ResetScene()
     {
-        SceneManager.LoadScene("Scaffold Scene");
+        Destroy(GameObject.Find("DebugConsole"));
+        Destroy(GameObject.Find("Main Camera"));
+        SceneManager.LoadScene("Setup Scene");
     }
 }

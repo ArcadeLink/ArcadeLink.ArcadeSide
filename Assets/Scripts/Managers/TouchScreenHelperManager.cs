@@ -25,9 +25,7 @@ namespace Managers
             if (StateManager.Instance.CurrentState == States.Main_Window && _clickCount >= 8)
             {
                 // 触发设置模式
-                StateManager.Instance.SetState(StateManager.Instance.CurrentState == States.Setting_Window
-                    ? States.Main_Window
-                    : States.Setting_Window);
+                DebugConsole.Open();
                 _clickCount = 0;
             }
             else if (StateManager.Instance.CurrentState != States.Main_Window && _clickCount >= 4)
