@@ -19,19 +19,17 @@ MonoBehaviour:
     rid: 3444481403219345409
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Scenes/Setup Scene.unity
-  - m_enabled: 1
     m_path: Assets/Scenes/Scaffold Scene.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Main Window.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Scan Window.unity
   - m_enabled: 1
+    m_path: Assets/Scenes/Setting Window.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/Join Window.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Static Window.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/Setting Window.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
