@@ -21,6 +21,8 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Setup Scene.unity
   - m_enabled: 1
+    m_path: Assets/Scenes/Scaffold Scene.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/Main Window.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Scan Window.unity
