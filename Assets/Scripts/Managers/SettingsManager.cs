@@ -41,6 +41,8 @@ namespace Managers
                 File.WriteAllText(_settingsPath, JsonConvert.SerializeObject(new SettingsModel()));
             }
             Instance = this;
+
+            Application.targetFrameRate = 60;
         }
         
         [DebugCommand("get")]
